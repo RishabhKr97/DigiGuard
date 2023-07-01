@@ -1,16 +1,10 @@
-# digiguard
+# DigiGuard
 
-A new Flutter project.
+Digi Guard is your own cyber security companion.
+It protects you from phishing attacks, spams and more!
 
-## Getting Started
+Want to become an expert in cyber fraud detection?
+We educate you via interactive quizzes so you can learn
+and level up your knowlege!
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## DigiGuard is available on playstore. Download Now!
