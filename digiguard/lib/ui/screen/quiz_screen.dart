@@ -28,7 +28,12 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
             questionText: currentQuestion.questionText,
             questionIndex: currentQuestionNumber,
           ),
-          Expanded(child: QuizOptions(options: currentQuestion.options)),
+          Expanded(
+            child: QuizOptions(
+              options: currentQuestion.options,
+              correctOptionIndex: currentQuestion.answerIndex,
+            ),
+          ),
         ],
       ),
     );
