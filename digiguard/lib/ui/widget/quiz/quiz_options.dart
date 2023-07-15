@@ -12,7 +12,7 @@ class QuizOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(Constants.quizWidgetsPadding),
+      padding: const EdgeInsets.all(ThemeConstants.quizWidgetsPadding),
       child: Column(
         children: [
           for (int i = 0; i < options.length; i++)

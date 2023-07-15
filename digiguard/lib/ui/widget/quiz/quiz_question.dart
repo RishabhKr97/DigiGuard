@@ -14,7 +14,7 @@ class QuizQuestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Constants.quizWidgetsPadding),
+      padding: const EdgeInsets.all(ThemeConstants.quizWidgetsPadding),
       height: 250,
       child: Card(
         elevation: 0.4,
