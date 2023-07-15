@@ -1,9 +1,15 @@
+import 'package:digiguard/data/reader/level_reader.dart';
+import 'package:digiguard/data/reader/question_reader.dart';
+import 'package:digiguard/data/storage/local_storage.dart';
 import 'package:digiguard/ui/screen/quiz_screen.dart';
 import 'package:digiguard/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await performInitializations();
   runApp(
     const ProviderScope(
       child: App(),
@@ -22,4 +28,19 @@ class App extends StatelessWidget {
       home: QuizScreen(),
     );
   }
+}
+
+Future<void> performInitializations() async {
+  Locale appLocale = const Locale.fromSubtags(languageCode: 'en');
+
+  await LocalStorage.initializeLocalStorage();
+
+  await LevelReader.initLevelInfo(
+    appLocale,
+  );
+
+  await QuestionReader.initQuestionData(
+    appLocale,
+    LocalStorage.getCurrentLevelId(),
+  );
 }

@@ -16,7 +16,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     final currentQuestion = ref.watch(questionProvider);
-    final currentIndex = ref.read(questionIndexProvider);
+    final currentQuestionNumber = ref.read(questionIndexProvider) + 1;
 
     return Scaffold(
       appBar: AppBar(
@@ -26,7 +26,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
         children: [
           QuizQuestion(
             questionText: currentQuestion.questionText,
-            questionIndex: currentIndex,
+            questionIndex: currentQuestionNumber,
           ),
           Expanded(child: QuizOptions(options: currentQuestion.options)),
         ],

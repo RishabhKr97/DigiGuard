@@ -1,4 +1,4 @@
-import 'package:digiguard/ui/theme/constants.dart';
+import 'package:digiguard/constants/ui_constants.dart';
 import 'package:flutter/material.dart';
 
 class QuizQuestion extends StatelessWidget {
@@ -14,7 +14,7 @@ class QuizQuestion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(ThemeConstants.quizWidgetsPadding),
+      padding: const EdgeInsets.all(UiConstants.quizWidgetsPadding),
       height: 250,
       child: Card(
         elevation: 0.4,

@@ -10,4 +10,10 @@ class Level {
     required this.description,
     required this.rank,
   });
+
+  Level.fromJson(Map<String, dynamic> json)
+      : id = json['id'] as String,
+        name = json['name'] as String,
+        description = json['description'] as String,
+        rank = json['rank'] as int;
 }

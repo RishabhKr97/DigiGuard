@@ -1,0 +1,32 @@
+[
+    {
+        "id": "level_1",
+        "name": "Beginner",
+        "rank": 0,
+        "description": "The introductory level where you learn the basics"
+    },
+    {
+        "id": "level_2",
+        "name": "Novice",
+        "rank": 1,
+        "description": "You have gained some knowledge and are ready for more challenges"
+    },
+    {
+        "id": "level_3",
+        "name": "Intermediate",
+        "rank": 2,
+        "description": "You have progressed beyond the basics and are tackling more complex problems"
+    },
+    {
+        "id": "level_4",
+        "name": "Advanced",
+        "rank": 3,
+        "description": "You have developed a high level of skill and can handle difficult problems"
+    },
+    {
+        "id": "level_5",
+        "name": "Expert",
+        "rank": 4,
+        "description": "You have mastered the subject and are considered a true authority in the field"
+    }
+]

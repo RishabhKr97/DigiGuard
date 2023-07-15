@@ -1,4 +1,6 @@
-import 'package:digiguard/model/Question.dart';
+import 'package:digiguard/constants/data_constants.dart';
+import 'package:digiguard/data/reader/question_reader.dart';
+import 'package:digiguard/model/question.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 const dummyQuestion = Question(
@@ -13,5 +15,7 @@ class QuestionNotifier extends StateNotifier<Question> {
 }
 
 final questionProvider = StateNotifierProvider<QuestionNotifier, Question>(
-  (ref) => QuestionNotifier(dummyQuestion),
+  (ref) => QuestionNotifier(
+    QuestionReader.getQuestion(DataConstants.initialQuestionIndex),
+  ),
 );

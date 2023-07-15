@@ -1,19 +1,19 @@
-import 'package:digiguard/data/storage/constants.dart';
+import 'package:digiguard/constants/data_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorage {
   static late final SharedPreferences localStorage;
 
-  static void initializeLocalStorage() async {
+  static Future<void> initializeLocalStorage() async {
     localStorage = await SharedPreferences.getInstance();
   }
 
   static String getCurrentLevelId() {
-    return localStorage.getString(StorageConstants.levelKey) ??
-        StorageConstants.initialLevelId;
+    return localStorage.getString(DataConstants.levelKey) ??
+        DataConstants.initialLevelId;
   }
 
   static void setCurrentLevelId(String currentLevelId) {
-    localStorage.setString(StorageConstants.levelKey, currentLevelId);
+    localStorage.setString(DataConstants.levelKey, currentLevelId);
   }
 }
