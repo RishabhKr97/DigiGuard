@@ -1,0 +1,21 @@
+[
+    {
+        "questionText": "Which of the following is a secure protocol for connecting to a server?",
+        "options": [
+            "HTTPS",
+            "HTTP",
+            "FTP",
+            "SMTP"
+        ],
+        "answerIndex": 0
+    },
+    {
+        "questionText": "You receive a message congratulating you for winning a lottery! You just need to give your basic details for verification of the reward. What will you do?",
+        "options": [
+            "Report the message as fraud",
+            "Submit the details being asked",
+            "Click on the links in the message to gather more information"
+        ],
+        "answerIndex": 0
+    }
+]
