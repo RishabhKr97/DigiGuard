@@ -1,25 +1,23 @@
-import 'package:digiguard/model/Question.dart';
+import 'package:digiguard/data/provider/question_index_provider.dart';
+import 'package:digiguard/data/provider/question_provider.dart';
 import 'package:digiguard/ui/widget/quiz/quiz_options.dart';
 import 'package:digiguard/ui/widget/quiz/quiz_question.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-const Question dummyQuestion = Question(
-  questionText:
-      'Which of the following is a sign of secure communication protocol?.',
-  options: ['https', 'http', 'ftp', 'None of the above'],
-  answerIndex: 0,
-);
-
-class QuizScreen extends StatefulWidget {
+class QuizScreen extends ConsumerStatefulWidget {
   const QuizScreen({super.key});
 
   @override
-  State<QuizScreen> createState() => _QuizScreenState();
+  ConsumerState<QuizScreen> createState() => _QuizScreenState();
 }
 
-class _QuizScreenState extends State<QuizScreen> {
+class _QuizScreenState extends ConsumerState<QuizScreen> {
   @override
   Widget build(BuildContext context) {
+    final currentQuestion = ref.watch(questionProvider);
+    final currentIndex = ref.read(questionIndexProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Quiz Time!'),
@@ -27,10 +25,10 @@ class _QuizScreenState extends State<QuizScreen> {
       body: Column(
         children: [
           QuizQuestion(
-            questionText: dummyQuestion.questionText,
-            questionIndex: 1,
+            questionText: currentQuestion.questionText,
+            questionIndex: currentIndex,
           ),
-          Expanded(child: QuizOptions(options: dummyQuestion.options)),
+          Expanded(child: QuizOptions(options: currentQuestion.options)),
         ],
       ),
     );
