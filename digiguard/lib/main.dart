@@ -1,3 +1,4 @@
+import 'package:digiguard/UI/Screen/quiz_screen.dart';
 import 'package:digiguard/UI/Theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,7 +19,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.defaultAppTheme,
       themeMode: ThemeMode.light,
-      home: null,
+      home: QuizScreen(),
     );
   }
 }
