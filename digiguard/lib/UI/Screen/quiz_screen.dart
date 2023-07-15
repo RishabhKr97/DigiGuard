@@ -1,6 +1,6 @@
-import 'package:digiguard/Model/Question.dart';
-import 'package:digiguard/UI/Widget/Quiz/quiz_options.dart';
-import 'package:digiguard/UI/Widget/Quiz/quiz_question.dart';
+import 'package:digiguard/model/Question.dart';
+import 'package:digiguard/ui/widget/quiz/quiz_options.dart';
+import 'package:digiguard/ui/widget/quiz/quiz_question.dart';
 import 'package:flutter/material.dart';
 
 const Question dummyQuestion = Question(

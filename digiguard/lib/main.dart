@@ -1,5 +1,5 @@
-import 'package:digiguard/UI/Screen/quiz_screen.dart';
-import 'package:digiguard/UI/Theme/app_theme.dart';
+import 'package:digiguard/ui/screen/quiz_screen.dart';
+import 'package:digiguard/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

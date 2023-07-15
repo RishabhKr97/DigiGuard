@@ -1,4 +1,4 @@
-import 'package:digiguard/UI/Theme/style_constants.dart';
+import 'package:digiguard/ui/theme/style_constants.dart';
 import 'package:flutter/material.dart';
 
 class QuizQuestion extends StatelessWidget {
