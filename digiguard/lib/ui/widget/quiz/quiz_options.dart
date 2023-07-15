@@ -1,4 +1,4 @@
-import 'package:digiguard/ui/theme/style_constants.dart';
+import 'package:digiguard/ui/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 class QuizOptions extends StatelessWidget {
@@ -12,7 +12,7 @@ class QuizOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(StyleConstants.quizWidgetsPadding),
+      padding: const EdgeInsets.all(Constants.quizWidgetsPadding),
       child: Column(
         children: [
           for (int i = 0; i < options.length; i++)
