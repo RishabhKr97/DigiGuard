@@ -8,7 +8,7 @@ import 'package:digiguard/model/question.dart';
 import 'package:flutter/services.dart';
 
 class QuestionReader {
-  static late List<Question> questionData;
+  static late List<Question> _questionData;
 
   static Future<void> initQuestionData(Locale locale, String levelId) async {
     if (LevelReader.isFinalLevel(levelId)) {
@@ -21,12 +21,12 @@ class QuestionReader {
     );
     List<dynamic> questionDataJson = json.decode(jsonString);
 
-    questionData = questionDataJson
+    _questionData = questionDataJson
         .map((questionData) => Question.fromJson(questionData))
         .toList();
   }
 
   static List<Question> getAllQuestions() {
-    return questionData;
+    return _questionData;
   }
 }

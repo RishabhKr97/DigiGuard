@@ -6,6 +6,7 @@ class LocalStorage {
 
   static Future<void> initializeLocalStorage() async {
     localStorage = await SharedPreferences.getInstance();
+    localStorage.clear();
   }
 
   static String getCurrentLevelId() {

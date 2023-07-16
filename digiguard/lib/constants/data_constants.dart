@@ -3,7 +3,8 @@ class DataConstants {
   static const initialLevelId = "level_1";
   static const finalLevelId = "level_6";
   static const assetRoot = "assets";
-  static const questionDataRoot = "question";
+  static const questionDataRoot = "questions";
+  static const imageDataRoot = "images";
   static const levelInfoAssetFile = "level_info.json";
 
   static const initialQuestionIndex = 0;

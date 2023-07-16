@@ -6,6 +6,8 @@ class UiConstants {
   static const quizDefaultCardElevation = 0.0;
   static const quizResultNextButtonSize = 45.0;
   static const quizResultRetryButtonSize = 40.0;
+  static const quizLevelImageSize = 50.0;
+  static const quizLevelImageMarginSize = 8.0;
   static const aCharCode = 65;
 
   static const defaultLanguage = 'en';

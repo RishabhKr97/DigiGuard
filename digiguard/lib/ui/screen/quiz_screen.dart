@@ -2,6 +2,7 @@ import 'package:digiguard/data/provider/level_provider.dart';
 import 'package:digiguard/data/provider/question_provider.dart';
 import 'package:digiguard/ui/widget/quiz/quiz_options.dart';
 import 'package:digiguard/ui/widget/quiz/quiz_question.dart';
+import 'package:digiguard/ui/widget/quiz/rank.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -25,7 +26,7 @@ class QuizScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          Text(currentLevel.name),
+          Rank(currentLevel),
           QuizQuestion(
             questionText: currentQuestion.questionText,
             questionIndex: currentQuestionNumber,

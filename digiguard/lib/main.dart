@@ -1,4 +1,5 @@
 import 'package:digiguard/constants/ui_constants.dart';
+import 'package:digiguard/data/reader/image_reader.dart';
 import 'package:digiguard/data/reader/level_reader.dart';
 import 'package:digiguard/data/reader/question_reader.dart';
 import 'package:digiguard/data/storage/local_storage.dart';
@@ -32,6 +33,9 @@ class App extends StatelessWidget {
 }
 
 Future<void> performInitializations() async {
+  // Note order is important in these initializations.
+  // The resoures that are dependent on other resources
+  // should be placed below them.
   await LocalStorage.initializeLocalStorage();
 
   await LevelReader.initLevelInfo(
@@ -42,4 +46,6 @@ Future<void> performInitializations() async {
     UiConstants.defaultLocale,
     LocalStorage.getCurrentLevelId(),
   );
+
+  await ImageReader.initImages();
 }

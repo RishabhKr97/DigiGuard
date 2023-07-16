@@ -6,8 +6,8 @@ import 'package:digiguard/model/level.dart';
 import 'package:flutter/services.dart';
 
 class LevelReader {
-  static late final List<Level> levelInfo;
-  static late final List<String> allLevelIds;
+  static late final List<Level> _levelInfo;
+  static late final List<String> _allLevelIds;
 
   static Future<void> initLevelInfo(Locale locale) async {
     final jsonString = await rootBundle.loadString(
@@ -15,21 +15,21 @@ class LevelReader {
     );
     List<dynamic> levelInfoJson = json.decode(jsonString);
 
-    levelInfo =
+    _levelInfo =
         levelInfoJson.map((levelData) => Level.fromJson(levelData)).toList();
 
-    allLevelIds = levelInfo.map((level) => level.id).toList();
+    _allLevelIds = _levelInfo.map((level) => level.id).toList();
   }
 
   static List<Level> getAllLevels() {
-    return levelInfo;
+    return _levelInfo;
   }
 
   static bool isFinalLevel(String levelId) {
-    return levelInfo.last.id == levelId;
+    return _levelInfo.last.id == levelId;
   }
 
   static List<String> getAllLevelIds() {
-    return allLevelIds;
+    return _allLevelIds;
   }
 }
