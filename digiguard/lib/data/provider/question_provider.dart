@@ -18,11 +18,24 @@ class QuestionNotifier extends StateNotifier<Question> {
       _currentIndex = 0;
     }
 
-    state = _allQuestions[_currentIndex];
+    state = _shuffleOptions(_allQuestions[_currentIndex]);
   }
 
   int getCurrentIndex() {
     return _currentIndex;
+  }
+
+  Question _shuffleOptions(final Question question) {
+    final List<String> options = List.from(question.options);
+    options.shuffle();
+    final answerIndex = options.indexWhere(
+        (option) => option == question.options.elementAt(question.answerIndex));
+
+    return Question(
+      questionText: question.questionText,
+      options: options,
+      answerIndex: answerIndex,
+    );
   }
 }
 
