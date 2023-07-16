@@ -4,13 +4,20 @@ import 'package:digiguard/model/level.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LevelProvider extends StateNotifier<Level> {
-  LevelProvider(super.state);
+  final List<Level> allLevels;
+  int currentLevelIndex;
+
+  LevelProvider(this.allLevels, this.currentLevelIndex)
+      : super(allLevels.elementAt(currentLevelIndex));
 }
 
 final levelProvider = StateNotifierProvider<LevelProvider, Level>(
-  (ref) => LevelProvider(
-    LevelReader.getLevel(
-      LocalStorage.getCurrentLevelId(),
-    ),
-  ),
+  (ref) {
+    final allLevels = LevelReader.getAllLevels();
+    final currentLevelId = LocalStorage.getCurrentLevelId();
+    final currentLevelIndex =
+        allLevels.indexWhere((level) => level.id == currentLevelId);
+
+    return LevelProvider(allLevels, currentLevelIndex);
+  },
 );

@@ -18,7 +18,7 @@ class LevelReader {
         levelInfoJson.map((levelData) => Level.fromJson(levelData)).toList();
   }
 
-  static Level getLevel(String levelId) {
-    return levelInfo.firstWhere((element) => element.id == levelId);
+  static List<Level> getAllLevels() {
+    return levelInfo;
   }
 }

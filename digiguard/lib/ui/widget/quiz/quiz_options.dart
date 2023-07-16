@@ -6,25 +6,33 @@ class QuizOptions extends StatefulWidget {
     super.key,
     required this.options,
     required this.correctOptionIndex,
+    required this.onNextQuestionRequest,
   });
 
   final List<String> options;
   final int correctOptionIndex;
+  final void Function() onNextQuestionRequest;
 
   @override
   State<QuizOptions> createState() => _QuizOptionsState();
 }
 
 class _QuizOptionsState extends State<QuizOptions> {
-  bool _isAnsweredSelected = false;
-  bool _isAnsweredCorrectly = false;
-  int _selectedOptionIndex = -1;
+  late bool _isAnsweredSelected;
+  late bool _isAnsweredCorrectly;
+  late int _selectedOptionIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _isAnsweredSelected = false;
+  }
 
   void _onSelectOption(int index, bool isCorrect) {
-    _isAnsweredCorrectly = isCorrect;
-    _selectedOptionIndex = index;
     setState(() {
       _isAnsweredSelected = true;
+      _isAnsweredCorrectly = isCorrect;
+      _selectedOptionIndex = index;
     });
   }
 
@@ -80,11 +88,7 @@ class _QuizOptionsState extends State<QuizOptions> {
           if (_isAnsweredSelected)
             if (_isAnsweredCorrectly)
               IconButton(
-                onPressed: () {
-                  setState(() {
-                    _isAnsweredSelected = false;
-                  });
-                },
+                onPressed: widget.onNextQuestionRequest,
                 icon: Icon(
                   Icons.navigate_next,
                   size: UiConstants.quizResultNextButtonSize,

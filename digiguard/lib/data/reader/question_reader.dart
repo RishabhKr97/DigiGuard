@@ -19,7 +19,7 @@ class QuestionReader {
         .toList();
   }
 
-  static Question getQuestion(int index) {
-    return questionData[index];
+  static List<Question> getAllQuestions() {
+    return questionData;
   }
 }
