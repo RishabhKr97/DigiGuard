@@ -1,3 +1,4 @@
+import 'package:digiguard/constants/ui_constants.dart';
 import 'package:digiguard/data/reader/level_reader.dart';
 import 'package:digiguard/data/reader/question_reader.dart';
 import 'package:digiguard/data/storage/local_storage.dart';
@@ -31,16 +32,14 @@ class App extends StatelessWidget {
 }
 
 Future<void> performInitializations() async {
-  Locale appLocale = const Locale.fromSubtags(languageCode: 'en');
-
   await LocalStorage.initializeLocalStorage();
 
   await LevelReader.initLevelInfo(
-    appLocale,
+    UiConstants.defaultLocale,
   );
 
   await QuestionReader.initQuestionData(
-    appLocale,
+    UiConstants.defaultLocale,
     LocalStorage.getCurrentLevelId(),
   );
 }

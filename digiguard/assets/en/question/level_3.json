@@ -1,0 +1,19 @@
+[
+    {
+        "questionText": "Is it fine to login to your bank on a public wifi network?",
+        "options": [
+            "No",
+            "Only if its an emergency",
+            "Yes, always"
+        ],
+        "answerIndex": 0
+    },
+    {
+        "questionText": "How do you decide which password to choose",
+        "options": [
+            "Somehine I can easily remember",
+            "Something that is difficult to guess"
+        ],
+        "answerIndex": 1
+    }
+]

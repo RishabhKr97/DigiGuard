@@ -1,0 +1,19 @@
+[
+    {
+        "questionText": "Which is the safest source to download an app",
+        "options": [
+            "From a public website",
+            "Download apk from a 3rd party website",
+            "Playstore"
+        ],
+        "answerIndex": 2
+    },
+    {
+        "questionText": "Is it okay to use same password across multiple web sites?",
+        "options": [
+            "No",
+            "Yes"
+        ],
+        "answerIndex": 0
+    }
+]

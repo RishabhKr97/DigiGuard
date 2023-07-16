@@ -1,0 +1,11 @@
+[
+    {
+        "questionText": "Is it fine to share OTP with others?",
+        "options": [
+            "Sometimes",
+            "No",
+            "Yes"
+        ],
+        "answerIndex": 1
+    }
+]

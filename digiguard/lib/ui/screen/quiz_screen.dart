@@ -1,3 +1,4 @@
+import 'package:digiguard/data/provider/level_provider.dart';
 import 'package:digiguard/data/provider/question_provider.dart';
 import 'package:digiguard/ui/widget/quiz/quiz_options.dart';
 import 'package:digiguard/ui/widget/quiz/quiz_question.dart';
@@ -16,6 +17,7 @@ class QuizScreen extends ConsumerWidget {
     final currentQuestion = ref.watch(questionProvider);
     final currentQuestionNumber =
         ref.read(questionProvider.notifier).getCurrentIndex() + 1;
+    final currentLevel = ref.read(levelProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -23,6 +25,7 @@ class QuizScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
+          Text(currentLevel.name),
           QuizQuestion(
             questionText: currentQuestion.questionText,
             questionIndex: currentQuestionNumber,
