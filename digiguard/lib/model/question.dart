@@ -17,4 +17,17 @@ class Question {
             )
             .toList(),
         answerIndex = json['answerIndex'] as int;
+
+  static Question shuffleOptions(final Question question) {
+    final List<String> options = List.from(question.options);
+    options.shuffle();
+    final answerIndex = options.indexWhere(
+        (option) => option == question.options.elementAt(question.answerIndex));
+
+    return Question(
+      questionText: question.questionText,
+      options: options,
+      answerIndex: answerIndex,
+    );
+  }
 }
