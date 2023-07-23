@@ -7,13 +7,20 @@ class QuestionNotifier extends StateNotifier<Question> {
   final Ref ref;
   List<Question> _allQuestions;
   var _currentIndex = 0;
+  var _displayIndex = 1;
 
   QuestionNotifier(this._allQuestions, this.ref)
       : super(Question.shuffleOptions(_allQuestions.first));
 
   Future<void> notifyQuestionAnswered() async {
     _currentIndex++;
+    _displayIndex++;
+
     if (_allQuestions.length == _currentIndex) {
+      if (!ref.read(levelProvider.notifier).isLastLevel()) {
+        _displayIndex = 1;
+      }
+
       await ref.read(levelProvider.notifier).notifyLevelIncrease();
       _allQuestions = QuestionReader.getAllQuestions();
       _allQuestions.shuffle();
@@ -23,8 +30,8 @@ class QuestionNotifier extends StateNotifier<Question> {
     state = Question.shuffleOptions(_allQuestions[_currentIndex]);
   }
 
-  int getCurrentIndex() {
-    return _currentIndex;
+  int getDisplayIndex() {
+    return _displayIndex;
   }
 }
 

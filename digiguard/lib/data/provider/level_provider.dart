@@ -13,7 +13,7 @@ class LevelProvider extends StateNotifier<Level> {
       : super(allLevels.elementAt(_currentLevelIndex));
 
   Future<void> notifyLevelIncrease() async {
-    if (_currentLevelIndex < allLevels.length - 1) {
+    if (!isLastLevel()) {
       _currentLevelIndex++;
     }
 
@@ -22,6 +22,10 @@ class LevelProvider extends StateNotifier<Level> {
     await QuestionReader.initQuestionData(
         UiConstants.defaultLocale, newLevelId);
     state = allLevels[_currentLevelIndex];
+  }
+
+  bool isLastLevel() {
+    return _currentLevelIndex == allLevels.length - 1;
   }
 }
 

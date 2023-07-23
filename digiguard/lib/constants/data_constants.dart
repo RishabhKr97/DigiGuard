@@ -8,4 +8,14 @@ class DataConstants {
   static const levelInfoAssetFile = "level_info.json";
 
   static const initialQuestionIndex = 0;
+
+  static const levelCompleteGreeting = [
+    "Superb",
+    "Brilliant",
+    "Fantastic",
+    "Awesome",
+    "Splendid",
+    "Terrific",
+    "Excellent",
+  ];
 }
